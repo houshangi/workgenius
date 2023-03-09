@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+  </head>
+  <body>
+    <ul id="event-list"></ul>
+
+    <script>
+      const socket = new WebSocket("ws://" + window.location.host + "/ws/chat/");
+      socket.onmessage = function(event) {
+        console.log("im here ")
+        const data = JSON.parse(event.data);
+        const listItem = document.createElement("li");
+        listItem.innerText = data.message_id + " - " + data.event_type;
+        document.getElementById("event-list").appendChild(listItem);
+      };
+    </script>
+  </body>
+</html>
