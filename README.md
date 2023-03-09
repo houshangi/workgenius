@@ -69,6 +69,7 @@ curl --location 'http://localhost:8000/api/send-event/' \
     ]
 }'
 
+```
 ## Considaration 
 i couldnt get access to Mandrill Web app because of conflicts in my country , so i desinged a simple webhook with no specific Security on the endpoint.
 please just look at my api desing as a toy Api Design because of this conflict.
