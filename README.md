@@ -1,4 +1,3 @@
-a django web-app implementing websockets.
 
 ## Local Setup
 
