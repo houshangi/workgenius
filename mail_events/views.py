@@ -20,6 +20,7 @@ class HandleMandrillEventView(APIView):
         mandrill_data = MandrillEvents.parse_raw(request.body.decode("utf-8"))
         for event in mandrill_data.mandrill_events:
             message_id = event.msg.id
+            event_type = event.event
             channel_layer = get_channel_layer()
 
             async_to_sync(channel_layer.group_send)(
@@ -27,7 +28,7 @@ class HandleMandrillEventView(APIView):
                 {
                     'type': 'event',
                     'message_id': message_id,
-                    'event_type': "open"
+                    'event_type': event_type
                 }
             )
 
