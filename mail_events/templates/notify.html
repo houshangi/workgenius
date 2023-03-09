@@ -10,7 +10,6 @@
     <script>
       const socket = new WebSocket("ws://" + window.location.host + "/ws/event/");
       socket.onmessage = function(event) {
-        console.log("im here ")
         const data = JSON.parse(event.data);
         const listItem = document.createElement("li");
         listItem.innerText = data.message_id + " - " + data.event_type;
