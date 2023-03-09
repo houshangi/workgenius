@@ -1,5 +1,4 @@
-a django web-app that takes opening hours of a resturant 
-in JSON format and returns the human-readable string in response.
+a django web-app implementing websockets.
 
 ## Local Setup
 
